@@ -14,20 +14,17 @@ class PageSeeder extends Seeder
     public function run(Faker $faker)
     {
         Page::create([
-            'title' => 'contact us',
-            'slug' => 'contact-us',
+            'feature' => 'contact us',
             'content' => $faker->paragraphs(15, true),
         ]);
 
         Page::create([
-            'title' => 'about us',
-            'slug' => 'about-us',
+            'feature' => 'about us',
             'content' => $faker->paragraphs(15, true),
         ]);
 
         Page::create([
-            'title' => 'our team',
-            'slug' => 'our-team',
+            'feature' => 'our team',
             'content' => $faker->paragraphs(15, true),
         ]);
     }

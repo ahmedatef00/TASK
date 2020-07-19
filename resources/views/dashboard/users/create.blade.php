@@ -1,0 +1,74 @@
+@extends('dashboard.index')
+
+@section('content')
+<div class="content">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-10" id="exampleModal">
+                <div class="card card-plain">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Create User</h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="{{ route("dashboard.users.store",)}}"
+                            enctype="multipart/form-data">
+                            @method('POST')
+                            @csrf
+
+
+                        
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Name</label>
+                                    <input type="text" name="name" class="form-control" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Email</label>
+                                        <input type="email" name="email" class="form-control" value="" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Password</label>
+                                        <input type="password" name="password" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Confirm Password</label>
+                                        <input type="password" name="confirm_password" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                  
+                            @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
+                            <div class="row justify-content-center">
+                                <button type="submit" class="btn btn-primary pull-right">Create User</button>
+                            </div>
+                            <div class="clearfix"></div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

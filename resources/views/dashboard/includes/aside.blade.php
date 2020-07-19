@@ -9,14 +9,14 @@
         </a></div>
     <div class="sidebar-wrapper">
         <ul class="nav">
-            <li class="{{ Request::is('admin') ? 'nav-item active' : 'nav-item' }}">
+            <li class="{{ Request::is('dashboard') ? 'nav-item active' : 'nav-item' }}">
                 <a class="nav-link" href="{{ route('dashboard.index') }}">
                     <i class="material-icons">dashboard</i>
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li class="{{ Request::is('admin/users') ? 'nav-item active' : 'nav-item' }}">
-                {{-- <a class="nav-link" href="{{ route('listUsers') }}"> --}}
+            <li class="{{ Request::is('dashboard/users') ? 'nav-item active' : 'nav-item' }}">
+                <a class="nav-link" href="{{ route('dashboard.users.index') }}">
                     <i class="material-icons">person</i>
                     <p>Users</p>
                 </a>
@@ -29,8 +29,14 @@
             </li>
             <li class="{{ Request::is('admin/books') ? 'nav-item active' : 'nav-item' }}">
                 {{-- <a class="nav-link" href={{ url('/admin/books') }}> --}}
-                    <i class="material-icons">content_paste</i>
+                    <i class="material-icons"> pages</i>
                     <p>Pages</p>
+                </a>
+            </li>
+            <li class="{{ Request::is('admin/books') ? 'nav-item active' : 'nav-item' }}">
+                {{-- <a class="nav-link" href={{ url('/admin/books') }}> --}}
+                    <i class="material-icons">settings</i>
+                    <p>Settings</p>
                 </a>
             </li>
         </ul>
