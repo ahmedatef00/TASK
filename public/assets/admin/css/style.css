@@ -1,0 +1,123 @@
+html {
+  font-size: 16px;
+}
+body {
+  font-family: "Goudy Bookletter 1911", serif;
+}
+.no-decoration {
+  text-decoration: none;
+  color: #000;
+}
+
+.no-decoration:hover {
+  color: #000;
+}
+
+.btn-success {
+    width: 13rem;
+}
+
+/* Navbar */
+nav.navbar {
+  height: 4rem;
+  box-shadow: 5px 5px 14px 4px rgba(7, 6, 0, 0.9);
+  position: sticky;
+  top: 0rem;
+  z-index: 11111;
+}
+
+/* Page Title */
+#hero {
+  min-height: 20rem;
+  background: url(../images/old-books.jpg) center fixed;
+  color: #fff;
+}
+
+#hero .overly {
+  width: 100%;
+  min-height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.541);
+}
+
+.page-title {
+  background: #bfbea2;
+  padding: 1rem;
+  color: #fff;
+}
+/* Filter Section */
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+/* End Of Filter */
+
+/* Rating Section */
+.star-rating {
+  /* direction: rtl; */
+  display: inline-block;
+}
+
+.star-rating .checked {
+  color: orange;
+  direction: ltr;
+}
+
+.star-rating input[type="radio"] {
+  display: none;
+}
+
+.star-rating label {
+  color: #bbb;
+  font-size: 18px;
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input[type="radio"]:checked ~ label {
+  color: #f2b600;
+}
+
+/* End Of Rating */
+
+/* Books card */
+
+.fa-heart-o,
+.fa-heart {
+  font-size: 1.4rem;
+}
+
+.fa-heart-o:hover::before {
+  cursor: pointer;
+  content: "\f004";
+  color: red;
+}
+
+/* Sidebar section*/
+.list-unstyled {
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+}
+.list-unstyled li {
+  padding: 0.7rem;
+  border-bottom: 1px solid #ccc;
+}
+
+/* End of sidebar */
