@@ -21,13 +21,12 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="container">
 
-        <a class="navbar-brand" href="{{route('home')}}">{{ $settings->site_name }}</a>
+        <a class="navbar-brand" href="{{route('home')}}">{{ $settings->site_name??'Blog' }}</a>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item ">
-                    <a class="nav-link" href="/">All Posts</a>
-                </li>
-
+            
+@if (isset($pages))
+    
                 @foreach ($pages as $page)
                 @if ($page->show == 1)
                 <li class="nav-item">
@@ -35,6 +34,7 @@
                 </li>
                 @endif
                 @endforeach
+                @endif
 
 
             </ul>

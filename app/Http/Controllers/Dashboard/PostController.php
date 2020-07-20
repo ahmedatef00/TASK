@@ -16,7 +16,7 @@ class PostController extends Controller
         $posts = Post::latest()->paginate(5);
         $users = User::select('id', 'name')->get();
 
-        return view('dashboard.posts.index', compact('posts','users'));
+        return view('dashboard.posts.index', compact('posts', 'users'));
     } // end of index
 
 
@@ -40,7 +40,7 @@ class PostController extends Controller
         if ($request->img) {
             $imageName = time() . '.' . request()->img->getClientOriginalExtension();
             request()->img->move(public_path('images'), $imageName);
-            } else {
+        } else {
             $imageName = 'default.png';
         }
         $data['img'] = $imageName;
@@ -75,7 +75,7 @@ class PostController extends Controller
         $data['img'] = $imgNewName;
         $read_more = strip_tags($request->read_more);
 
-        $data['read_more'] =  $read_more;  
+        $data['read_more'] =  $read_more;
         $post->update($data);
         session()->flash('status', 'Post has been updated successfully!');
         return redirect('dashboard/posts');

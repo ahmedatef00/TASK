@@ -120,7 +120,6 @@
                                             border: 1px solid #aaa;
                                             background: #20293f;
                                             padding: 5px;" id="inputGroupSelect01">
-                                                    <option value="">Choose...</option>
                                                     @foreach ($users as $user)
                                                     <option value="{{$user->id}}">{{$user->name}}</option>
                                                     @endforeach
