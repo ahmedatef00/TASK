@@ -9,7 +9,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class UserPolicy
 {
     use HandlesAuthorization;
-    
+
     /**
      * Determine whether the user can view any models.
      *
@@ -30,7 +30,7 @@ class UserPolicy
      */
     public function view()
     {
-        return auth()->user()->isAdmin === 1 ;
+        return auth()->user()->isAdmin === 1;
     }
 
     /**
