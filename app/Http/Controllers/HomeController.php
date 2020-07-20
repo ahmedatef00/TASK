@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Page;
 use App\Post;
+use App\Setting;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -26,7 +28,13 @@ class HomeController extends Controller
     public function home()
     {
         $posts = Post::take(6)->orderBy('id', 'desc')->get();
-        
-        return view('home',compact('posts'));
+        $settings = Setting::first();
+        $pages = Page::select('id', 'feature', 'show')->get();
+
+        return view('layouts.app' ,compact('posts','settings', 'pages'));
+
     }
+   
+
+
 }

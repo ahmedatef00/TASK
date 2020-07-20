@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\CheckPage;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@home')->name('home');
-Route::get('/custompage/{feature}', 'PageController@getPage')->name('get_page')->middleware('menu_filter');
+
+Route::get('/custompage/{feature}', 'PageController@getPage')->name('get_page')->middleware('page');
 Route::get('/posts/{id}', 'PostController@show')->name('show_post');
