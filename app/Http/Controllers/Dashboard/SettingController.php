@@ -46,7 +46,7 @@ class SettingController extends Controller
         // update site name
         Setting::where('id', $id)->update($data);
         session()->flash('status', 'Settings updated successfully!');
-        return redirect('/dashboard');
+        return redirect('/dashboard/home');
     } // end of edit
 
 

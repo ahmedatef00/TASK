@@ -84,7 +84,6 @@ php artisan serve
 
 ##### Default account:
 
-
 * email: admin@admin.test
 * password: 123456
 
@@ -93,31 +92,37 @@ php artisan serve
 ## Routes
 
 <pre>
-&gt; GET http://127.0.0.1:8000
-
 &gt; POST http://127.0.0.1:8000/register
 &gt; POST http://127.0.0.1:8000/login
+&gt; GET http://127.0.0.1:8000
 &gt; GET http://127.0.0.1:8000/home
-
 &gt; GET http://127.0.0.1:8000/custom/{feature}
 &gt; GET http://127.0.0.1:8000/posts/{id}
 
 dashboard:
-&gt; PUT http://localhost:8000/dashboard/posts/{id}
-&gt; PUT http://localhost:8000/dashboard/pages/{id}
+&gt; PUT http://localhost:8000/dashboard/posts/update/{id}
+&gt; PUT http://localhost:8000/dashboard/pages/update/{id}
+&gt; PUT http://localhost:8000/dashboard/settings/update/{id}
+&gt; PUT http://localhost:8000/dashboard/users/update/{id}
+
 &gt; POST http://localhost:8000/dashboard/posts
 &gt; POST http://localhost:8000/dashboard/pages
+&gt; POST http://localhost:8000/dashboard/users
 &gt; DELETE http://localhost:8000/dashboard/posts/{id}
+&gt; DELETE http://localhost:8000/dashboard/users/{id}
 &gt; DELETE http://localhost:8000/dashboard/pages/{id}
 
 &gt; GET http://127.0.0.1:8000/dashboard/home
 &gt; GET http://127.0.0.1:8000/dashboard/users
+&gt; GET http://127.0.0.1:8000/dashboard/create/users
 &gt; GET http://localhost:8000/dashboard/posts
 &gt; GET  http://localhost:8000/dashboard/pages
 &gt; GET  http://localhost:8000/dashboard/settings/edit
 &gt; GET http://localhost:8000/dashboard/pages/{id}/edit
 &gt; GET http://127.0.0.1:8000/dashboard/posts?page={paginate}
 &gt; GET http://localhost:8000/dashboard/posts/{id}/edit
+&gt; GET http://localhost:8000/dashboard/users/13/edit
+&gt; GET http://localhost:8000/dashboard/settings/edit
 
 </pre>
 
