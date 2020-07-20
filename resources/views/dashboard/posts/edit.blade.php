@@ -35,12 +35,11 @@
                 <div class="col-md-8">
                     <div class="form-group">
                         <div class="input-group mt-4">
-                            <label class="bmd-label-floating" for="inputGroupSelect01">Category</label>
+                            <label class="bmd-label-floating" for="inputGroupSelect01">Users</label>
                             <select name="user_id" class="custom-select form-control" style="color: #fff;
                             border: 1px solid #aaa;
                             background: #20293f;
                             padding: 5px;" id="inputGroupSelect01">
-                                <option value="">Choose...</option>
                                 @foreach ($users as $user)
                                 <option value="{{$user->id}}">{{$user->name}}</option>
                                 @endforeach
@@ -74,7 +73,7 @@
 
             <div class="form-group">
                 <label for="read_more">read_more</label>
-                <textarea name="read_more" id="desc" class="form-control">{{$post->desc}}
+                <textarea name="read_more" id="desc" class="form-control">{{$post->read_more}}
                 
                 </textarea>
             </div>

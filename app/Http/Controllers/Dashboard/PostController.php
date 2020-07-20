@@ -73,7 +73,9 @@ class PostController extends Controller
             $imgNewName = 'default.png';
         }
         $data['img'] = $imgNewName;
+        $read_more = strip_tags($request->read_more);
 
+        $data['read_more'] =  $read_more;  
         $post->update($data);
         session()->flash('status', 'Post has been updated successfully!');
         return redirect('dashboard/posts');
