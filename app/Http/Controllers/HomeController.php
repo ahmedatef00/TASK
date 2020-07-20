@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,8 @@ class HomeController extends Controller
      */
     public function home()
     {
-        return view('home');
+        $posts = Post::take(6)->orderBy('id', 'desc')->get();
+        
+        return view('home',compact('posts'));
     }
 }

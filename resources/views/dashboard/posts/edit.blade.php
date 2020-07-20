@@ -1,9 +1,9 @@
-
-@extends('dashboard.index    ', ['title' => 'Edit Post'])
+@extends('dashboard.index ', ['title' => 'Edit Post'])
 
 @section('content')
 
-<script src="https://cdn.tiny.cloud/1/4pa3wwh9jhsm0puz28whwnzzzwxgzwn513ip2nxluj8srp8u/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/4pa3wwh9jhsm0puz28whwnzzzwxgzwn513ip2nxluj8srp8u/tinymce/5/tinymce.min.js"
+    referrerpolicy="origin"></script>
 
 <script>
     tinymce.init({
@@ -19,9 +19,9 @@
     <div class="card-header">
         <div class="d-flex justify-content-between">
             <h3 class="card-title mt-2"><i class="fa fa-user mr-1"></i> Edit Post | {{ $post->title }}</h3>
-  <a href="{{url()->previous()}}" class="btn btn-default text-dark">                                         
-                            <i class="material-icons">keyboard_backspace</i>
-                            Back</a>
+            <a href="{{url()->previous()}}" class="btn btn-default text-dark">
+                <i class="material-icons">keyboard_backspace</i>
+                Back</a>
         </div>
     </div> <!-- /.card-header -->
     <!-- form start -->
@@ -36,7 +36,7 @@
                     <div class="form-group">
                         <div class="input-group mt-4">
                             <label class="bmd-label-floating" for="inputGroupSelect01">Category</label>
-                            <select  name="user_id" class="custom-select form-control" style="color: #fff;
+                            <select name="user_id" class="custom-select form-control" style="color: #fff;
                             border: 1px solid #aaa;
                             background: #20293f;
                             padding: 5px;" id="inputGroupSelect01">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
             </div>
-           
+
 
             <div class="form-group">
                 <label for="title">Title</label>
@@ -62,17 +62,19 @@
             </div>
 
             <div class="form-group">
-                <img src="{{url('images').'/'.$post->img}}" style="height: 100px;" class="img-thumbnail img-preview" alt="post image">
+                <img src="{{url('images').'/'.$post->img}}" style="height: 100px;" class="img-thumbnail img-preview"
+                    alt="post image">
             </div>
 
             <div class="form-group">
                 <label for="short_brief">short_brief</label>
-                <input type="text" name="short_brief" value="{{$post->short_brief}}" class="form-control" id="short_desc">
+                <input type="text" name="short_brief" value="{{$post->short_brief}}" class="form-control"
+                    id="short_desc">
             </div>
 
             <div class="form-group">
                 <label for="read_more">read_more</label>
-                <textarea name="read_more" id="desc" class="form-control"  >{{$post->desc}}
+                <textarea name="read_more" id="desc" class="form-control">{{$post->desc}}
                 
                 </textarea>
             </div>

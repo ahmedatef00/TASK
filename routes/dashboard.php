@@ -1,7 +1,8 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 
-    Route::group(['middleware' => ['can:view,App\User'], 'prefix' => 'dashboard'], function () {
+Route::group(['middleware' => ['can:view,App\User'], 'prefix' => 'dashboard'], function () {
 
     Route::get('/', 'HomeController@index')->name('index');
     Route::resource('users', 'AdminController')->except(['show']);
@@ -13,4 +14,4 @@ use Illuminate\Support\Facades\Route;
         Route::get('/edit', 'SettingController@edit')->name('edit');
         Route::put('/update/{id}', 'SettingController@update')->name('update');
     });
-}); 
+});

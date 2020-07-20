@@ -20,7 +20,7 @@
 
     @include('dashboard.includes.scripts')
 
-  
+
 </body>
 
 </html>

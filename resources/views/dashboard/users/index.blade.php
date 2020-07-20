@@ -47,13 +47,13 @@
                                  
                                     <td>
                                         <button type="button" rel="tooltip" 
-                                            onclick="deleteUser({{$user->id}})" class="btn btn-white btn-link btn-sm">
-                                            <i class="material-icons">close</i>
+                                            onclick="deleteUser({{$user->id}})" class="btn btn-sm btn-danger delete"><i
+                                            class="fa fa-trash"></i>
                                         </button>
                                     </td>
                                     <td>
 
-                                    <p class="card-category"> <a href="{{route('users.edit', $user->id)}}" class="btn btn-primary px-4"> 
+                                    <p class="card-category"> <a href="{{route('users.edit', $user->id)}}" class="btn btn-primary px-4"><i class="fa fa-edit"></i> 
                                         Edit  </a>
                                       </p>
                                     </td>
