@@ -6,18 +6,15 @@ namespace App\Http\Controllers;
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Page;
-use App\Post;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Dashboard.
      *
      * @return \Illuminate\Http\Response
      */
@@ -29,7 +26,7 @@ class AdminController extends Controller
 
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new User.
      *
      * @return \Illuminate\Http\Response
      */
@@ -41,7 +38,7 @@ class AdminController extends Controller
 
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created User in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -56,19 +53,24 @@ class AdminController extends Controller
         $requestPayload['password'] = Hash::make($data['password']);
         User::create($requestPayload,);
         session()->flash('status', 'User has been created successfully!');
-        return redirect(route('dashboard.users.index'));
-    } // end of store
+        return redirect('dashboard/users');
+    }
 
-
+    /**
+     * Edit User
+     *
+     * @param User $user
+     * @return void
+     */
     public function edit(User $user)
     {
         return view('dashboard.users.edit', compact('user'));
-    } // end of edit
+    }
 
 
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified User in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -86,12 +88,12 @@ class AdminController extends Controller
 
         $user->update($requestPayload);
         session()->flash('status', 'User has been updated successfully!');
-        return redirect(route('dashboard.users.index'));
-    } //
+        return redirect('dashboard/users');
+    }
 
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified USER from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

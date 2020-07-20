@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Page;
 use App\Post;
 use App\Setting;
-use App\User;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -21,7 +19,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the Blog For Regualar Users.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -31,10 +29,6 @@ class HomeController extends Controller
         $settings = Setting::first();
         $pages = Page::select('id', 'feature', 'show')->get();
 
-        return view('layouts.app' ,compact('posts','settings', 'pages'));
-
+        return view('home', compact('posts', 'settings', 'pages'));
     }
-   
-
-
 }

@@ -21,22 +21,22 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="container">
 
-        <a class="navbar-brand"  href="{{route('home')}}">{{ $settings->site_name }}</a>
+        <a class="navbar-brand" href="{{route('home')}}">{{ $settings->site_name }}</a>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item ">
                     <a class="nav-link" href="/">All Posts</a>
                 </li>
-              
-                        @foreach ($pages as $page)
-                        @if ($page->show == 1)
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('get_page', $page->feature)}}">{{ucwords($page->feature)}}</a>
-                        </li>
-                        @endif
-                        @endforeach
-        
-        
+
+                @foreach ($pages as $page)
+                @if ($page->show == 1)
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('get_page', $page->feature)}}">{{ucwords($page->feature)}}</a>
+                </li>
+                @endif
+                @endforeach
+
+
             </ul>
         </div>
 
@@ -62,10 +62,8 @@
                 @endif
                 @else
                 <li class="nav-item dropdown">
-                    {{-- <a  class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-          {{ Auth::user()->name }} <span class="caret"></span>
-                    </a> --}}
-                    <img src="{{asset("Userimages/".Auth::user()->image) }}" width="60" height="40" alt="" title="">
+
+                    <img src="{{asset("images/".'default.jpeg') }}" width="60" height="40" alt="" title="">
                 </li>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
