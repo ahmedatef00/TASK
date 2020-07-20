@@ -1,6 +1,6 @@
 # Inspire
 
-![AhmedAtef]
+![[AhmedAtef]]
 
 ## Project Overview
 
