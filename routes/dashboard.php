@@ -9,5 +9,8 @@ use Illuminate\Support\Facades\Route;
     // Post controller 
     Route::resource('posts', 'PostController')->except(['show']);
     Route::resource('pages', 'PageController')->except(['show']);
-
+    Route::prefix('settings')->name('settings.')->group(function () {
+        Route::get('/edit', 'SettingController@edit')->name('edit');
+        Route::put('/update/{id}', 'SettingController@update')->name('update');
+    });
 }); 

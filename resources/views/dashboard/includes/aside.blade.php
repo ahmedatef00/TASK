@@ -33,8 +33,8 @@
                     <p>Pages</p>
                 </a>
             </li>
-            <li class="{{ Request::is('admin/books') ? 'nav-item active' : 'nav-item' }}">
-                {{-- <a class="nav-link" href={{ url('/admin/books') }}> --}}
+            <li class="{{ Request::is('dashboard/settings') ? 'nav-item active' : 'nav-item' }}">
+                <a class="nav-link" href={{ route('settings.edit') }}>
                     <i class="material-icons">settings</i>
                     <p>Settings</p>
                 </a>
