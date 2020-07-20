@@ -13,18 +13,17 @@ class PostController extends Controller
 
     public function index()
     {
-        $posts = Post::latest()->paginate(5);
         $users = User::select('id', 'name')->get();
 
         return view('dashboard.posts.index', compact('posts', 'users'));
-    } // end of index
+    }
 
 
     public function create()
     {
         $users = User::select('id', 'name')->get();
         return view('dashboard.posts.create', compact('users'));
-    } // end of create
+    }
 
     public function store(Request $request)
     {
@@ -48,14 +47,14 @@ class PostController extends Controller
         Post::create($data);
         session()->flash('status', 'Post has been created successfully!');
         return redirect('dashboard/posts');
-    } // end of store
+    }
 
 
     public function edit(Post $post)
     {
         $users = User::select('id', 'name')->get();
         return view('dashboard.posts.edit', compact('post', 'users'));
-    } // end of edit
+    }
 
     public function update(Request $request, Post $post)
     {
@@ -82,12 +81,12 @@ class PostController extends Controller
         $post->update($data);
         session()->flash('status', 'Post has been updated successfully!');
         return redirect('dashboard/posts');
-    } // end of update
+    }
 
     public function destroy(Post $post)
     {
         $post->delete();
         session()->flash('status', 'Post has been deleted successfully!');
         return redirect('dashboard/posts');
-    } // end of destroy
+    }
 }

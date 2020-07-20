@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function home()
     {
-        $posts = Post::take(6)->orderBy('id', 'desc')->get();
+        $posts = Post::take(5)->orderBy('id', 'desc')->get();
         $settings = Setting::first();
         $pages = Page::select('id', 'feature', 'show')->get();
 

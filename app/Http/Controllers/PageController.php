@@ -10,10 +10,9 @@ class PageController extends Controller
     public function getPage($feature)
     {
         $page = Page::where('feature', $feature)->first();
-        $ddd = 'dsdsds';
         $settings = Setting::first();
         $pages = Page::select('id', 'feature', 'show')->get();
 
-        return view('Custom', compact('pages', 'page', 'settings', 'ddd'));
+        return view('Custom', compact('pages', 'page', 'settings'));
     }
 }
