@@ -58,29 +58,14 @@ class AdminController extends Controller
         session()->flash('status', 'User has been created successfully!');
         return redirect(route('dashboard.users.index'));
     } // end of store
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
 
-        $user = User::find($id);
-        return view('dashboard.pages.profile', ['admin' => $user]);
-    }
+    public function edit(User $user)
+    {
+        return view('dashboard.users.edit', compact('user'));
+    } // end of edit
+
+
 
     /**
      * Update the specified resource in storage.
@@ -89,23 +74,21 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProfile $request, $id)
+
+    public function update(Request $request, User $user)
     {
+        $requestPayload = Validator::make($request->all(), [
+            'name' => 'required|string|max:100',
+            'email' => ['required', 'email', Rule::unique('users', 'email')->ignore($user->id, 'id')],
+        ])->validate();
 
-        $admin = User::find($id);
-        $admin->name = $request->name;
-        $admin->username = $request->username;
-        $admin->password = Hash::make($request->password);
+        $requestPayload['password'] = Hash::make($request['password']);
 
+        $user->update($requestPayload);
+        session()->flash('status', 'User has been updated successfully!');
+        return redirect(route('dashboard.users.index'));
+    } //
 
-        if (request()->image != null) {
-            $imageName = time() . '.' . request()->image->getClientOriginalExtension();
-            request()->image->move(public_path('images'), $imageName);
-            $admin->image = $imageName;
-        }
-        $admin->save();
-        return redirect('admin')->with('message', 'Your profile is updated successfully');
-    }
 
     /**
      * Remove the specified resource from storage.

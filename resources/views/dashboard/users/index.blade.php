@@ -1,5 +1,4 @@
 @extends('dashboard.index')
-
 @section('content')
 <div class="content">
     <div class="container-fluid">
@@ -8,10 +7,11 @@
             <div class="card card-plain">
                 <div class="card-header card-header-warning">
                     <h4 class="card-title ">Users</h4>
-                    <p class="card-category">            <a href="{{route('dashboard.users.create')}}" class="btn btn-primary px-4"> 
+                    
+                    <p class="card-category">            <a href="{{route('users.create')}}" class="btn btn-primary px-4"> 
                       Add  </a>
                     </p>
-
+                    
                     <p class="card-category"> list of all our users</p>
                 </div>
                 <div class="card-body">
@@ -27,9 +27,7 @@
                                 <th>
                                     Email
                                 </th>
-                                <th>
-                                    Active
-                                </th>
+                               
                                 <th>
                                     Action
                                 </th>
@@ -52,6 +50,12 @@
                                             onclick="deleteUser({{$user->id}})" class="btn btn-white btn-link btn-sm">
                                             <i class="material-icons">close</i>
                                         </button>
+                                    </td>
+                                    <td>
+
+                                    <p class="card-category"> <a href="{{route('users.edit', $user->id)}}" class="btn btn-primary px-4"> 
+                                        Edit  </a>
+                                      </p>
                                     </td>
                                
                                 </tr>

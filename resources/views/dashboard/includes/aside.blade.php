@@ -4,25 +4,25 @@
 
       Tip 2: you can also add an image using data-image tag
   -->
-    <div class="logo"><a href={{route("dashboard.index")}} class="simple-text logo-normal">
+    <div class="logo"><a href={{route("index")}} class="simple-text logo-normal">
             Library Management
         </a></div>
     <div class="sidebar-wrapper">
         <ul class="nav">
             <li class="{{ Request::is('dashboard') ? 'nav-item active' : 'nav-item' }}">
-                <a class="nav-link" href="{{ route('dashboard.index') }}">
+                <a class="nav-link" href="{{ route('index') }}">
                     <i class="material-icons">dashboard</i>
                     <p>Dashboard</p>
                 </a>
             </li>
             <li class="{{ Request::is('dashboard/users') ? 'nav-item active' : 'nav-item' }}">
-                <a class="nav-link" href="{{ route('dashboard.users.index') }}">
+                <a class="nav-link" href="{{ route('users.index') }}">
                     <i class="material-icons">person</i>
                     <p>Users</p>
                 </a>
             </li>
             <li class="{{ Request::is('admin/admins') ? 'nav-item active' : 'nav-item' }}">
-                {{-- <a class="nav-link" href="{{ route('listAdmins') }}"> --}}
+                <a class="nav-link" href="{{ route('posts.index') }}">
                     <i class="material-icons">content_paste</i>
                     <p>Posts</p>
                 </a>

@@ -1,13 +1,9 @@
 <?php
 
+namespace App\Http\Controllers;
 
-namespace App\Http\Controllers\Dashboard;
-
-use App\Http\Controllers\Controller;
-use App\Page;
-use App\Post;
-use App\User;
 use Illuminate\Http\Request;
+
 class HomeController extends Controller
 {
     /**
@@ -19,18 +15,14 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    
+    public function home()
     {
-        $data['users'] = User::count();
-        $data['posts'] = Post::count();
-        return view('dashboard.index')->with($data);
+        return view('home');
     }
-   
 }
