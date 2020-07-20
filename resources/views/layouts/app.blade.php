@@ -5,8 +5,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+  <title>
+    {{ config('app.name') }} |
+    @isset($title)
+    {{ $title }}
+    @endisset
+</title>  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/ico" href="images//b018978995324d2b64160a62514a7970.jpg">
@@ -17,24 +21,14 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="container">
 
-  <a class="navbar-brand" href="/">Mktabty</a>
+  <a class="navbar-brand" href="/">Blog</a>
   <div class="collapse navbar-collapse" id="collapsibleNavId">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item ">
-        <a class="nav-link" href="/">All Books</a>
+        <a class="nav-link" href="/">All Posts</a>
       </li>
 
-      @auth
-      <li class="nav-item">
-        <a class="nav-link" href="/favorites">Favorites</a>
-      </li>
-      @endauth
-
-      @auth
-      <li class="nav-item">
-        <a class="nav-link" href="/mybooks">My Books</a>
-      </li>
-      @endauth
+   
 
     </ul>
   </div>

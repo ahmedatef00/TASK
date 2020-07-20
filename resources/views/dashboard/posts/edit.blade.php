@@ -8,7 +8,9 @@
 <script>
     tinymce.init({
 			selector: 'textarea',
-            plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',			menubar: false
+            plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',	
+            
+            menubar: false
 		});
 </script>
 <div class="card card-primary mt-5">

@@ -8,5 +8,6 @@ use Illuminate\Support\Facades\Route;
     Route::get('/deleteUser/{id}', 'AdminController@destroy')->name('destroy');
     // Post controller 
     Route::resource('posts', 'PostController')->except(['show']);
+    Route::resource('pages', 'PageController')->except(['show']);
 
 }); 

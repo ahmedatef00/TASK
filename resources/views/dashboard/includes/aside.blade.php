@@ -5,7 +5,7 @@
       Tip 2: you can also add an image using data-image tag
   -->
     <div class="logo"><a href={{route("index")}} class="simple-text logo-normal">
-            Library Management
+            Blog Management
         </a></div>
     <div class="sidebar-wrapper">
         <ul class="nav">
@@ -21,14 +21,14 @@
                     <p>Users</p>
                 </a>
             </li>
-            <li class="{{ Request::is('admin/admins') ? 'nav-item active' : 'nav-item' }}">
+            <li class="{{ Request::is('dashboard/posts') ? 'nav-item active' : 'nav-item' }}">
                 <a class="nav-link" href="{{ route('posts.index') }}">
                     <i class="material-icons">content_paste</i>
                     <p>Posts</p>
                 </a>
             </li>
-            <li class="{{ Request::is('admin/books') ? 'nav-item active' : 'nav-item' }}">
-                {{-- <a class="nav-link" href={{ url('/admin/books') }}> --}}
+            <li class="{{ Request::is('dashboard/pages') ? 'nav-item active' : 'nav-item' }}">
+                <a class="nav-link" href={{ route('pages.index') }}>
                     <i class="material-icons"> pages</i>
                     <p>Pages</p>
                 </a>
