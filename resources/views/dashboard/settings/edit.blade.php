@@ -30,6 +30,11 @@
                 <input type="text" name="site_name" value="{{$setting->site_name}}" class="form-control" id="site_name"
                     required>
             </div>
+            <div class="form-group">
+                <label for="site_menu">Site menu</label>
+                <input type="text" name="site_menu" value="{{$setting->site_menu}}" class="form-control" id="site_name"
+                    required>
+            </div>
 
             <div class="form-group">
                 <label>Select Menu Elements</label>

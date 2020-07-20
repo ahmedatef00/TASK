@@ -23,8 +23,6 @@
 3. Option to edit page (with WYSIWYG editor).
 4. Option to add page.
 
-  
-
  -Setting Pages
    1. Option to edit site name.
 
@@ -109,7 +107,6 @@ dashboard:
 &gt; POST http://localhost:8000/dashboard/pages
 &gt; POST http://localhost:8000/dashboard/users
 &gt; DELETE http://localhost:8000/dashboard/posts/{id}
-&gt; DELETE http://localhost:8000/dashboard/users/{id}
 &gt; DELETE http://localhost:8000/dashboard/pages/{id}
 
 &gt; GET http://127.0.0.1:8000/dashboard/home

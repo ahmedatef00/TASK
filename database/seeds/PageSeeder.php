@@ -26,6 +26,12 @@ class PageSeeder extends Seeder
         Page::create([
             'feature' => 'our team',
             'content' => $faker->paragraphs(15, true),
+        ]); Page::create([
+            'feature' => 'our',
+            'content' => $faker->paragraphs(15, true),
+        ]); Page::create([
+            'feature' => 'our3',
+            'content' => $faker->paragraphs(15, true),
         ]);
     }
 }

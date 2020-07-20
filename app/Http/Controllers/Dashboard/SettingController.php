@@ -40,7 +40,8 @@ class SettingController extends Controller
 
 
         $data =  $request->validate([
-            'site_name' => 'required|string|max:50'
+            'site_name' => 'required|string|max:50',
+            'site_menu' => 'required|string|max:50'
         ]);
 
         // update site name

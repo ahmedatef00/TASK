@@ -62,10 +62,10 @@ class PostController extends Controller
     {
         $data = $request->validate([
             'user_id' => 'required|integer|exists:users,id',
-            'title' => ['required', 'string', 'max:50', Rule::unique('posts', 'title')->ignore($post->id, 'id')],
+            'title' => ['string', 'max:50', Rule::unique('posts', 'title')->ignore($post->id, 'id')],
             'img' => 'nullable|image|mimes:png,jpg,jpeg',
-            'short_brief' => 'required|string|max:200',
-            'read_more' => 'required|string',
+            'short_brief' => 'string|max:200',
+            'read_more' => 'string',
         ], [], ['user_id' => 'user', 'img' => 'image', 'short_brief' => 'short description', 'read_more' => 'description']);
         if ($request->img) {
             $imgNewName = $data['img']->hashName();
