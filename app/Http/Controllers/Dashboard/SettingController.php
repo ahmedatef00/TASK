@@ -15,20 +15,20 @@ class SettingController extends Controller
         $pages = Page::select('id', 'feature', 'show')->get();
 
         return view('dashboard.settings.edit', compact(['setting', 'pages']));
-    } // end of edit
+    }
 
     public function update(Request $request, $id)
     {
 
-        $selectedElements = $request->show;
+        $show = $request->show;
         $pages = Page::select('id', 'show')->get();
 
         foreach ($pages as $key => $page) {
 
-            // check if there is no elements to show
-            if ($selectedElements) {
-                // check if the element is selected
-                if (in_array($page->id, $selectedElements)) {
+            // check if there is no page to show
+            if ($show) {
+                // check if the page is selected
+                if (in_array($page->id, $show)) {
                     $page->update(['show' => 1]);
                 } else {
                     $page->update(['show' => 0]);
@@ -36,7 +36,7 @@ class SettingController extends Controller
             } else {
                 $page->update(['show' => 0]);
             }
-        } // end of update menu foreach
+        }
 
 
         $data =  $request->validate([
@@ -44,11 +44,9 @@ class SettingController extends Controller
             'site_menu' => 'required|string|max:50'
         ]);
 
-        // update site name
+        // update site name/menue 
         Setting::where('id', $id)->update($data);
         session()->flash('status', 'Settings updated successfully!');
         return redirect('/dashboard/home');
-    } // end of edit
-
-
+    }
 }

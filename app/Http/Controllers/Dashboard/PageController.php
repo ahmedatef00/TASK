@@ -65,5 +65,5 @@ class PageController extends Controller
         $page->delete();
         session()->flash('status', 'Page has been deleted successfully!');
         return redirect('dashboard/pages');
-    } // end of destroy
+    }
 }

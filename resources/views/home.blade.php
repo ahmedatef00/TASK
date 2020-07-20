@@ -8,5 +8,5 @@
                 @include('Post')
                 @endforeach
         </div>
-       
+
         @endsection
