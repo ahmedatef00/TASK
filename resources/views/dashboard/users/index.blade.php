@@ -7,11 +7,11 @@
             <div class="card card-plain">
                 <div class="card-header card-header-warning">
                     <h4 class="card-title ">Users</h4>
-                    
-                    <p class="card-category">            <a href="{{route('users.create')}}" class="btn btn-primary px-4"> 
-                      Add  </a>
+
+                    <p class="card-category"> <a href="{{route('users.create')}}" class="btn btn-primary px-4">
+                            Add </a>
                     </p>
-                    
+
                     <p class="card-category"> list of all our users</p>
                 </div>
                 <div class="card-body">
@@ -27,7 +27,7 @@
                                 <th>
                                     Email
                                 </th>
-                               
+
                                 <th>
                                     Action
                                 </th>
@@ -44,20 +44,20 @@
                                     <td>
                                         {{$user->email}}
                                     </td>
-                                 
+
                                     <td>
-                                        <button type="button" rel="tooltip" 
-                                            onclick="deleteUser({{$user->id}})" class="btn btn-sm btn-danger delete"><i
-                                            class="fa fa-trash"></i>
+                                        <button type="button" rel="tooltip" onclick="deleteUser({{$user->id}})"
+                                            class="btn btn-sm btn-danger delete"><i class="fa fa-trash"></i>
                                         </button>
                                     </td>
                                     <td>
 
-                                    <p class="card-category"> <a href="{{route('users.edit', $user->id)}}" class="btn btn-primary px-4"><i class="fa fa-edit"></i> 
-                                        Edit  </a>
-                                      </p>
+                                        <p class="card-category"> <a href="{{route('users.edit', $user->id)}}"
+                                                class="btn btn-primary px-4"><i class="fa fa-edit"></i>
+                                                Edit </a>
+                                        </p>
                                     </td>
-                               
+
                                 </tr>
                                 @empty
                                 <p>No users</p>
@@ -72,8 +72,7 @@
 </div>
 @endsection
 <script>
-  
-  function deleteUser(id) {
+    function deleteUser(id) {
         var row = document.getElementById(id);
         row.parentNode.removeChild(row);
         var xmlhttp = new XMLHttpRequest();

@@ -10,18 +10,17 @@
                         <h4 class="card-title">Create User</h4>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route("users.store",)}}"
-                            enctype="multipart/form-data">
+                        <form method="POST" action="{{ route("users.store",)}}" enctype="multipart/form-data">
                             @method('POST')
                             @csrf
 
 
-                        
+
                             <div class="row">
                                 <div class="col-md-10">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Name</label>
-                                    <input type="text" name="name" class="form-control" >
+                                        <input type="text" name="name" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -29,7 +28,7 @@
                                 <div class="col-md-10">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Email</label>
-                                        <input type="email" name="email" class="form-control" value="" >
+                                        <input type="email" name="email" class="form-control" value="">
                                     </div>
                                 </div>
                             </div>
@@ -48,7 +47,7 @@
                                 </div>
                             </div>
                             <br>
-                  
+
                             @if ($errors->any())
                             <div class="alert alert-danger">
                                 <ul>
@@ -61,10 +60,10 @@
                             <div class="row justify-content-center">
                                 <button type="submit" class="btn btn-primary pull-right">Create User</button>
                             </div>
-                            <a href="{{url()->previous()}}" class="btn btn-default text-dark">                                         
+                            <a href="{{url()->previous()}}" class="btn btn-default text-dark">
                                 <i class="material-icons">keyboard_backspace</i>
                                 Back</a>
-    
+
                             <div class="clearfix"></div>
 
 

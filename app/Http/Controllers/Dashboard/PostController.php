@@ -73,6 +73,9 @@ class PostController extends Controller
             $imgNewName = 'default.png';
         }
         $data['img'] = $imgNewName;
+        /**
+         * remove any html tags 
+         */
         $read_more = strip_tags($request->read_more);
 
         $data['read_more'] =  $read_more;

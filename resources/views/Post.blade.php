@@ -1,23 +1,15 @@
-<div class="col-md-6 mt-6">
-    <div class="card card-plain">
-        <img class="card-img-top" src={{asset("images/".$post->img)}} alt="post image" height="250px" />
 
-        <div class="card-body">
-           
-            <h4 class="card-title mb-0">
-                <a href="{{route('show_post' ,['id'=> $post->id])}}" class="no-decoration">{{$post->title}}</a>
-            </h4>
-            <span class="text-secondary d-flex ">{{$post->short_brief}}</span>
-
-
-          
-
-            <p class="card-text">
-              {{$post->read_more}}
-            </p>
-
-        </div>
-
+<div class="card bg-light mb-3" style="width: 18rem;">
+    <img class="card-img-top"src={{asset("images/".$post->img)}}  alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{$post->title}}</h5>
+      <p class="card-text">{{$post->read_more}}</p>
     </div>
-
-</div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{$post->short_brief}}</li>
+      <li class="list-group-item">{{$post->created_at}}</li>
+    </ul>
+    <div class="card-body">
+      <a  href="{{route('show_post' ,['id'=> $post->id])}}" class="card-link">readmore</a>
+    </div>
+  </div>

@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
         {{ config('app.name') }} |
-        @isset($title)
-        {{ $title }}
-        @endisset
+
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -24,9 +22,9 @@
         <a class="navbar-brand" href="{{route('home')}}">{{ $settings->site_name??'Blog' }}</a>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            
-@if (isset($pages))
-    
+
+                @if (isset($pages))
+
                 @foreach ($pages as $page)
                 @if ($page->show == 1)
                 <li class="nav-item">

@@ -14,7 +14,7 @@ class PageController extends Controller
 
     public function index()
     {
-        $pages = Page::select('id', 'feature', )->latest()->paginate(5);
+        $pages = Page::select('id', 'feature',)->latest()->paginate(5);
         return view('dashboard.pages.index', compact('pages'));
     } // end of index
 
@@ -27,8 +27,8 @@ class PageController extends Controller
     {
         $data = $request->validate([
             'feature' => 'required|string|min:5|max:50|unique:pages,feature',
-                                'content' => 'required|string|min:5|unique:pages,content',
-                                ]);
+            'content' => 'required|string|min:5|unique:pages,content',
+        ]);
 
         Page::create($data);
         session()->flash('status', 'Page has been created successfully!');
@@ -42,22 +42,25 @@ class PageController extends Controller
 
     public function update(Request $request, Page $page)
     {
-       
-       
-        
-            
+
+
+
+
         $data = $request->validate([
             'feature' => ['required', 'string', 'min:5', 'max:50', Rule::unique('pages', 'feature')->ignore($page->id, 'id')],
             'content' => 'required|string',
         ]);
-            $page->feature = $request->feature;
-            $content = strip_tags($request->content);
+        $page->feature = $request->feature;
+        /**
+         * remove any html tags 
+         */
+        $content = strip_tags($request->content);
 
-            $page->content =  $content;  
- 
-                     $page->save();
-                     return redirect('dashboard/pages');
-                    } // end of update
+        $page->content =  $content;
+
+        $page->save();
+        return redirect('dashboard/pages');
+    }
 
     public function destroy(Page $page)
     {
