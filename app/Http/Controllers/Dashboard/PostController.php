@@ -13,6 +13,8 @@ class PostController extends Controller
 
     public function index()
     {
+        $posts = Post::latest()->paginate(5);
+
         $users = User::select('id', 'name')->get();
 
         return view('dashboard.posts.index', compact('posts', 'users'));

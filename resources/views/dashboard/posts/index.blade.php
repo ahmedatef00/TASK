@@ -84,6 +84,9 @@
 
                             </div>
                         </div>
+                        <div class="card-footer clearfix">
+                            {{ $posts->links() }}
+                        </div>
                     </div>
                 </div>
                 <a href="{{url()->previous()}}" class="btn btn-default text-dark">
